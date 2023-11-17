@@ -83,6 +83,7 @@ def TaylorF2PlusEnvironmentFrequencyDomainPlusCross(fedd=5, epsilon=3.2*10**6, n
         # hc_fd_without_env[i] = hc_fd_without_env[i] * (np.exp(complex(0, DF(hp_fd_without_env.sample_frequencies[i], mass1, mass2, eta, Mc, z, normolized_rho) + phi_minus4_PN(hp_fd_without_env.sample_frequencies[i], z, Mc, fedd, epsilon))))
     # print("my wave 3")
 
+
     ##########################################################################################################################################
     # 将环境效应的函数放在主函数里面
     tau_s = 4.5 * 10**7 * 365 * 86400
@@ -97,7 +98,7 @@ def TaylorF2PlusEnvironmentFrequencyDomainPlusCross(fedd=5, epsilon=3.2*10**6, n
     frequencies_ = hp_fd_without_env.sample_frequencies
     for i in range(len(hp_fd_without_env)):
         if abs(frequencies_[i])<=0.0001:
-            frequencies_[i] = 0.0001
+            frequenciiixes_[i] = 0.0001
         phi_minus4 = (-fedd*(8.0*xi+15)*(75.0*Mc)/(851968.0*tau_s)) * (c**(-3)*G*Msun) + (25*Mc/65536*3.2*10**(-11)*epsilon) * (G*c**(-4)*Msun)
         phi_minus4 = phi_minus4 * ( (1+z) * np.pi*Mc*frequencies_[i] * Msun*(G * c**(-3.0)) )**(-13.0/3)
         gamma_DF = -247*np.log(frequencies_[i]/f_DF) - 39 + 304*np.log(20) + 38*np.log(3125.0/8)
@@ -123,7 +124,6 @@ def TaylorF2PlusEnvironmentFrequencyDomainPlusCross(fedd=5, epsilon=3.2*10**6, n
             # hc_fd_without_env[i] = hc_fd_without_env[i] * env_phase[i]
         # 
         # print("my wave 4")
-
 
 
     # def old1:
